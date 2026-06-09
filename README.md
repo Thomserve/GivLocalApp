@@ -1,2 +1,2 @@
-# GivLocalDocs
-Documentation for the GivLocal app for iOS and Anrdoid
+# GivLocalApp
+GivLocal app for iOS and Anrdoid
