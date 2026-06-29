@@ -1,0 +1,2 @@
+# Redirect www to apex
+https://www.givlocal.app/* https://givlocal.app/:splat 301
