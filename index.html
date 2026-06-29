@@ -448,7 +448,42 @@
 
     /* ── SCREENSHOTS ── */
     .screenshots-section { overflow: hidden; }
-    .screenshots-header { margin-bottom: 52px; }
+    .screenshots-header { margin-bottom: 36px; }
+
+    /* Device toggle tabs */
+    .device-tabs {
+      display: inline-flex;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 4px;
+      gap: 4px;
+      margin-bottom: 40px;
+    }
+    .device-tab {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: .85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      transition: all .2s;
+    }
+    .device-tab.active {
+      background: var(--bg2);
+      border: 1px solid var(--border2);
+      color: var(--text);
+    }
+    .device-tab svg { flex-shrink: 0; }
+
+    /* Carousels */
+    .screen-carousel { display: none; }
+    .screen-carousel.active { display: block; }
 
     .screen-scroll-wrap {
       position: relative;
@@ -474,6 +509,7 @@
       scroll-snap-align: start;
     }
 
+    /* Phone frame */
     .phone-frame {
       width: 236px;
       border-radius: 38px;
@@ -496,10 +532,33 @@
       border-radius: 0 0 14px 14px;
       z-index: 10;
     }
-    .phone-frame img {
-      width: 100%;
-      display: block;
+    .phone-frame img { width: 100%; display: block; }
+
+    /* Tablet frame */
+    .tablet-frame {
+      width: 340px;
+      border-radius: 26px;
+      border: 8px solid #1c1c2e;
+      box-shadow:
+        0 0 0 1px #28283c,
+        0 28px 64px rgba(0,0,0,.65),
+        0 0 48px rgba(0,212,255,.05);
+      overflow: hidden;
+      background: #000;
+      position: relative;
     }
+    .tablet-frame::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 12px; height: 12px;
+      background: #1c1c2e;
+      border-radius: 50%;
+      z-index: 10;
+      top: 10px;
+    }
+    .tablet-frame img { width: 100%; display: block; }
 
     .phone-label {
       text-align: center;
@@ -902,7 +961,7 @@
     </div>
     <div class="stat-item">
       <span class="stat-dot dot-green"></span>
-      iOS &amp; Android
+      iPhone, iPad &amp; Android
     </div>
   </div>
 </div>
@@ -962,51 +1021,103 @@
     <div class="screenshots-header fade-in">
       <span class="section-eyebrow">Screenshots</span>
       <h2 class="section-title">See it in action.</h2>
-      <p class="section-sub">A clean, dark interface designed to be informative at a glance and simple to navigate.</p>
+      <p class="section-sub">A clean, dark interface designed to be informative at a glance and simple to navigate — on any screen size.</p>
+    </div>
+
+    <!-- Toggle -->
+    <div class="device-tabs fade-in">
+      <button class="device-tab active" onclick="switchTab('phone', this)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17 2H7C5.9 2 5 2.9 5 4v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-3 18H10v-1h4v1zm3-3H7V5h10v12z"/></svg>
+        iPhone
+      </button>
+      <button class="device-tab" onclick="switchTab('tablet', this)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21 4H3C1.9 4 1 4.9 1 6v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1 14H4V6h16v12z"/></svg>
+        iPad
+      </button>
     </div>
   </div>
 
-  <div class="screen-scroll-wrap">
-    <div class="screen-scroll">
-      <!-- pad start so first card aligns with container -->
-      <div style="flex-shrink:0; width: max(24px, calc((100vw - 1080px)/2 + 24px))"></div>
+  <!-- Phone carousel -->
+  <div class="screen-carousel active" id="carousel-phone">
+    <div class="screen-scroll-wrap">
+      <div class="screen-scroll">
+        <div style="flex-shrink:0; width: max(24px, calc((100vw - 1080px)/2 + 24px))"></div>
 
-      <div class="phone-wrap">
-        <div class="phone-frame">
-          <img src="assets/screenshots/screen1.png" alt="Dashboard power flow" loading="lazy">
+        <div class="phone-wrap">
+          <div class="phone-frame">
+            <img src="assets/screenshots/screen1.png" alt="Dashboard power flow" loading="lazy">
+          </div>
+          <p class="phone-label">Live Power Flow</p>
         </div>
-        <p class="phone-label">Live Power Flow</p>
-      </div>
-
-      <div class="phone-wrap">
-        <div class="phone-frame">
-          <img src="assets/screenshots/screen2.png" alt="Energy statistics" loading="lazy">
+        <div class="phone-wrap">
+          <div class="phone-frame">
+            <img src="assets/screenshots/screen2.png" alt="Energy statistics" loading="lazy">
+          </div>
+          <p class="phone-label">Energy Stats</p>
         </div>
-        <p class="phone-label">Energy Stats</p>
-      </div>
-
-      <div class="phone-wrap">
-        <div class="phone-frame">
-          <img src="assets/screenshots/screen3.png" alt="Charge and discharge schedules" loading="lazy">
+        <div class="phone-wrap">
+          <div class="phone-frame">
+            <img src="assets/screenshots/screen3.png" alt="Charge and discharge schedules" loading="lazy">
+          </div>
+          <p class="phone-label">Schedules</p>
         </div>
-        <p class="phone-label">Schedules</p>
-      </div>
-
-      <div class="phone-wrap">
-        <div class="phone-frame">
-          <img src="assets/screenshots/screen4.png" alt="Device discovery" loading="lazy">
+        <div class="phone-wrap">
+          <div class="phone-frame">
+            <img src="assets/screenshots/screen4.png" alt="Device discovery" loading="lazy">
+          </div>
+          <p class="phone-label">Device Discovery</p>
         </div>
-        <p class="phone-label">Device Discovery</p>
-      </div>
-
-      <div class="phone-wrap">
-        <div class="phone-frame">
-          <img src="assets/screenshots/screen5.png" alt="Inverter settings" loading="lazy">
+        <div class="phone-wrap">
+          <div class="phone-frame">
+            <img src="assets/screenshots/screen5.png" alt="Inverter settings" loading="lazy">
+          </div>
+          <p class="phone-label">Inverter Settings</p>
         </div>
-        <p class="phone-label">Inverter Settings</p>
-      </div>
 
-      <div style="flex-shrink:0; width: max(24px, calc((100vw - 1080px)/2 + 24px))"></div>
+        <div style="flex-shrink:0; width: max(24px, calc((100vw - 1080px)/2 + 24px))"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tablet carousel -->
+  <div class="screen-carousel" id="carousel-tablet">
+    <div class="screen-scroll-wrap">
+      <div class="screen-scroll">
+        <div style="flex-shrink:0; width: max(24px, calc((100vw - 1080px)/2 + 24px))"></div>
+
+        <div class="phone-wrap">
+          <div class="tablet-frame">
+            <img src="assets/screenshots/tablet1.png" alt="Dashboard power flow on iPad" loading="lazy">
+          </div>
+          <p class="phone-label">Live Power Flow</p>
+        </div>
+        <div class="phone-wrap">
+          <div class="tablet-frame">
+            <img src="assets/screenshots/tablet2.png" alt="Battery detail on iPad" loading="lazy">
+          </div>
+          <p class="phone-label">Battery Detail</p>
+        </div>
+        <div class="phone-wrap">
+          <div class="tablet-frame">
+            <img src="assets/screenshots/tablet3.png" alt="Multi-device dashboard on iPad" loading="lazy">
+          </div>
+          <p class="phone-label">Multi-Device View</p>
+        </div>
+        <div class="phone-wrap">
+          <div class="tablet-frame">
+            <img src="assets/screenshots/tablet4.png" alt="Inverter settings on iPad" loading="lazy">
+          </div>
+          <p class="phone-label">Inverter Settings</p>
+        </div>
+        <div class="phone-wrap">
+          <div class="tablet-frame">
+            <img src="assets/screenshots/tablet5.png" alt="Device discovery on iPad" loading="lazy">
+          </div>
+          <p class="phone-label">Device Discovery</p>
+        </div>
+
+        <div style="flex-shrink:0; width: max(24px, calc((100vw - 1080px)/2 + 24px))"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1186,6 +1297,14 @@
 </footer>
 
 <script>
+  // Screenshot tab switcher
+  function switchTab(device, btn) {
+    document.querySelectorAll('.device-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.screen-carousel').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('carousel-' + device).classList.add('active');
+  }
+
   // Intersection Observer for fade-in animations
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
