@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | GivLocal</title>
+  <meta name="description" content="GivLocal privacy policy covering local-only data handling, contact details, and your rights.">
+  <meta property="og:title" content="GivLocal Privacy Policy">
+  <meta property="og:description" content="A clear, local-first privacy policy for the GivLocal app.">
+  <meta property="og:image" content="https://givlocal.app/assets/icon.png">
+  <meta property="og:url" content="https://givlocal.app/privacy.html">
+  <meta name="theme-color" content="#090912">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #090912;
+      --bg2: #0e0e1b;
+      --card: #17172a;
+      --border: rgba(255,255,255,0.07);
+      --border2: rgba(255,255,255,0.12);
+      --green: #3ddc6c;
+      --green-lo: rgba(61,220,108,0.12);
+      --green-md: rgba(61,220,108,0.25);
+      --cyan: #00d4ff;
+      --muted: #6b7280;
+      --text: #eef0f8;
+      --dim: #3d3d55;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      background: rgba(9,9,18,0.8);
+      backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-brand img { width: 34px; height: 34px; border-radius: 8px; }
+    .nav-brand-name { font-size: 1.05rem; font-weight: 800; letter-spacing: -0.03em; }
+
+    .nav-links { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .page-shell {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 56px 24px 88px;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, rgba(61,220,108,0.12), rgba(0,212,255,0.08));
+      border: 1px solid var(--border2);
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.28);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-lo);
+      border: 1px solid var(--green-md);
+      color: var(--green);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4.2vw, 2.9rem);
+      line-height: 1.12;
+      margin-bottom: 14px;
+      letter-spacing: -0.035em;
+    }
+
+    .hero-card p {
+      color: var(--muted);
+      max-width: 680px;
+      font-size: 1rem;
+    }
+
+    .policy-card {
+      margin-top: 24px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+    }
+
+    .policy-card h2 {
+      font-size: 1.1rem;
+      margin: 24px 0 10px;
+      color: var(--green);
+      letter-spacing: -0.02em;
+    }
+
+    .policy-card h2:first-of-type { margin-top: 0; }
+
+    .policy-card p, .policy-card li {
+      color: #d3d9e8;
+      font-size: 0.98rem;
+    }
+
+    .policy-card ul { padding-left: 18px; margin-top: 10px; }
+    .policy-card li { margin-bottom: 8px; }
+
+    .contact-box {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+    }
+
+    .contact-box a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer {
+      padding: 36px 32px 46px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 16px;
+      font-size: 0.8rem;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 680px) {
+      nav { padding: 0 20px; }
+      .nav-links { gap: 12px; }
+      .hero-card, .policy-card { padding: 24px; }
+      .page-shell { padding: 32px 18px 64px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .footer-links a { margin-left: 0; margin-right: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <img src="assets/icon.png" alt="GivLocal">
+      <span class="nav-brand-name">GivLocal</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#screenshots">Screenshots</a>
+      <a href="index.html#devices">Devices</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="https://docs.givlocal.app" target="_blank" rel="noopener">Docs</a>
+    </div>
+  </nav>
+
+  <main class="page-shell">
+    <section class="hero-card">
+      <div class="eyebrow">Privacy Policy</div>
+      <h1>Built to keep your home energy data local and private.</h1>
+      <p>GivLocal is designed around local control. This policy explains what information is involved when you use the app and how it is handled.</p>
+    </section>
+
+    <section class="policy-card">
+      <h2>Overview</h2>
+      <p>This privacy policy applies to the GivLocal app for mobile devices, together with any related services operated by Jonathan Thomson (collectively, the “Application”). Jonathan Thomson is referred to as the “Service Provider”.</p>
+
+      <h2>What information does the app obtain and how is it used?</h2>
+      <p>The Application does not collect, log, or store personal information when you download and use it. Registration is not required. If the Application is used with an active internet connection, technical protocol data such as your temporary IP address may be transmitted to facilitate connectivity, but it is not retained or used for tracking.</p>
+
+      <h2>Location information</h2>
+      <p>The Application does not collect precise real-time location information about your mobile device.</p>
+
+      <h2>Third-party access</h2>
+      <p>Because the Application does not collect personal information, no data is shared with third parties.</p>
+
+      <h2>Your choices</h2>
+      <p>Since the Application does not collect personal information through normal use, uninstalling the app simply removes it from your device. If you contact the Service Provider directly or voluntarily provide information by other means, you may request deletion of that information by contacting support@givlocal.app.</p>
+
+      <h2>Children</h2>
+      <p>The Application is not intended for children under 16 years of age, or such higher age as required by applicable law. The Service Provider does not knowingly solicit data from children or market to them.</p>
+
+      <h2>Security</h2>
+      <p>Because the Application does not collect personal data, the risk of personal data exposure is minimal. The Service Provider nonetheless implements reasonable safeguards to protect systems and any data it holds.</p>
+
+      <h2>Data breach notification</h2>
+      <p>Since the Application does not collect personal data through normal use, the risk of a data breach affecting your personal data is minimal. If a breach occurs involving data you have voluntarily provided, the Service Provider will notify you as required by applicable law.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>The Service Provider may update this Privacy Policy from time to time. Material changes will be posted with an effective date, and where required by law the Service Provider will seek your consent before they take effect.</p>
+
+      <h2>Your consent</h2>
+      <p>If you voluntarily provide information and processing is based on consent, you may withdraw that consent at any time without affecting processing carried out before withdrawal.</p>
+
+      <div class="contact-box">
+        <strong>Contact</strong>
+        <p>If you have any questions about privacy or data handling, please contact the Service Provider at <a href="mailto:support@givlocal.app">support@givlocal.app</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span style="color: var(--muted); font-size: 0.8rem;">GivLocal is not affiliated with or endorsed by GivEnergy.</span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://docs.givlocal.app" target="_blank" rel="noopener">Documentation</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
