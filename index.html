@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GivLocal - Local Control for Your GivEnergy System</title>
-  <meta name="description" content="Monitor and control your GivEnergy solar and battery system directly from your phone. Real-time power flow, charge scheduling, and full inverter control - all locally, with no cloud required.">
-  <meta property="og:title" content="GivLocal - Local Control for Your GivEnergy System">
-  <meta property="og:description" content="Take full control of your GivEnergy solar and battery system from your phone, without the cloud.">
+  <title>GivLocal: Local Control for Your Solar and Battery System</title>
+  <meta name="description" content="Monitor and control your solar and battery system directly from your phone. Real-time power flow, charge scheduling and full inverter control, all locally with no cloud required. Works with GivEnergy hardware.">
+  <meta property="og:title" content="GivLocal: Local Control for Your Solar and Battery System">
+  <meta property="og:description" content="Take full control of your solar and battery system from your phone, without the cloud. Works with GivEnergy hardware.">
   <meta property="og:image" content="https://givlocal.app/assets/icon.png">
   <meta property="og:url" content="https://givlocal.app">
   <meta name="theme-color" content="#090912">
@@ -350,6 +350,20 @@
       font-size: 1rem;
       color: var(--muted);
       max-width: 520px;
+      line-height: 1.75;
+    }
+
+    /* ── HERO DISCLAIMER ── */
+    .hero-disclaimer {
+      text-align: center;
+      padding: 0 24px 56px;
+      background: var(--bg);
+    }
+    .hero-disclaimer p {
+      max-width: 640px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1rem;
       line-height: 1.75;
     }
 
@@ -953,6 +967,11 @@
   </div>
 </section>
 
+<!-- ═══ HERO DISCLAIMER ═══ -->
+<div class="hero-disclaimer">
+  <p>GivLocal is an independent product. It is not affiliated with, endorsed by, or supported by GivEnergy. GivEnergy is a trade mark of its owner and is used here only to describe hardware compatibility.</p>
+</div>
+
 <!-- ═══ STAT BAR ═══ -->
 <div class="stat-bar">
   <div class="stat-bar-inner">
@@ -981,7 +1000,7 @@
     <div class="fade-in">
       <span class="section-eyebrow">Features</span>
       <h2 class="section-title">Everything you need.<br>Nothing you don't.</h2>
-      <p class="section-sub">Full visibility and control of your GivEnergy system - right from your pocket, without relying on any third-party service.</p>
+      <p class="section-sub">Full visibility and control of your system - right from your pocket, without relying on any third-party service.</p>
     </div>
 
     <div class="features-grid fade-in">
@@ -1209,7 +1228,7 @@
   <div class="container">
     <div class="fade-in">
       <span class="section-eyebrow">Supported Devices</span>
-      <h2 class="section-title">Works with your GivEnergy kit.</h2>
+      <h2 class="section-title">Supported hardware</h2>
       <p class="section-sub">GivLocal supports a wide range of GivEnergy hardware, discovered automatically over your local network.</p>
     </div>
     <div class="devices-grid fade-in">
@@ -1337,7 +1356,7 @@
       <a href="https://play.google.com/store/apps/details?id=com.thomserve.givlocal" target="_blank" rel="noopener">Google Play</a>
       <a href="mailto:support@givlocal.app">Support</a>
     </div>
-    <p class="footer-copy">GivLocal is not affiliated with or endorsed by GivEnergy.</p>
+    <p class="footer-copy">GivLocal is an independent product. It is not affiliated with, endorsed by, or supported by GivEnergy. GivEnergy is a trade mark of its owner and is used here only to describe hardware compatibility.</p>
   </div>
 </footer>
 
