@@ -1,7 +1,5 @@
 # GivLocalApp
-GivLocal app for iOS and Anrdoid
-
-Visit the [wiki](https://github.com/Thomserve/GivLocalApp/wiki) for documentation.
+INVLocal app for iOS and Anrdoid
 
 iOS version coming as soon as Apple approve it!
 
